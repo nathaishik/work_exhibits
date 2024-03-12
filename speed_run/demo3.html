@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO 3</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    </style>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Poppins, Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            font-weight: 500;
+            font-size: 1.3rem;
+            overflow-x: hidden;
+        }
+        body::-webkit-scrollbar { width: 0 !important }
+
+        /* general */
+        :root {
+            --theme-color: rgb(240, 232, 73);
+            --bg-color: rgb(36, 36, 36);
+            --text-color: rgb(185, 185, 185);
+        }
+        .thm-text {
+            color: var(--theme-color);
+        }
+
+        p {
+            font-size: 2rem;
+            text-align: justify;
+        }
+
+        p strong {
+            font-weight: inherit;
+            color: white;
+        }
+
+        .btn {
+            border-radius: 10px;
+            border: 2px solid var(--theme-color);
+            padding: 10px 20px;
+            color: var(--theme-color);
+            text-decoration: none;
+            text-decoration-color: var(--theme-color);
+            transition-duration: 0.2s;
+
+        }
+        .social-link {
+            font-size: 2rem;
+            margin-right: 1vw;
+        }
+        .btn:hover {
+            background: var(--theme-color);
+            color: black;
+            transition-duration: 0.2s;
+        }
+        marquee {
+            position: relative;
+            z-index: -1;
+        }
+        /* header */
+        header h2, h3 {
+            font-weight: 500;
+            margin: 0;
+            padding: 0;
+        }
+
+        header h2 {
+            color: white;
+        }
+        header h2 {
+            font-size: 2rem;
+        }
+        header h3 {
+            font-size: 1.7rem;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+        }
+        /* nav */
+        nav {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-color);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            
+            transition-duration: 0.2s;
+        }
+        nav a:hover {
+            color: var(--theme-color);
+            transition-duration: 0.2s;
+        }
+
+        nav a:active {
+            border-bottom: var(--theme-color);
+        }
+        /* sections */
+        section.lvl1 {
+            width: 100vw;
+            padding: 50px;
+
+        }
+
+        section.lvl1 h1 {
+            font-size: 4rem;
+            font-weight: 400;
+            color: white;
+        }
+
+        /* hero */
+        #hero {
+            display: flex;
+            justify-content: space-between;
+        }
+        #hero h1 {
+            font-weight: 400;
+            font-size: 6rem;
+            color: white;
+            margin: 0;
+        }
+
+        #hero p {
+            margin: 0px 0px 30px 0px;
+            width: 60vw;
+        }
+
+
+        /* about */
+        #about {
+            display: flex;
+            justify-content: space-between;
+            background-color: radial-gradient(at 100% 0%, rgb(41, 41, 41) 0%, rgba(0, 0, 0, 0.543) 100%), radial-gradient(at 0% 100%, rgb(81, 81, 81) 0%, rgba(0, 0, 0, 0.543) 100%);
+
+        }
+
+        #about p {
+            width: 60vw;
+        }
+
+        aside ul {
+            margin: 10px 0 30px 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        aside ul a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        aside ul a:hover {
+            color: var(--theme-color);
+        }
+
+        aside {
+            margin: 50px;
+        }
+
+        /* exhibtion */
+        #gallery {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        figure {
+            display: table;
+            height: auto;
+            margin: 1vw;
+        }
+        img {
+            height: 50vh;
+            border-radius: 10px;
+        }
+        figcaption {
+            font-size: 2rem;
+            
+            display: table-caption;
+            caption-side: bottom;
+        }
+
+        /* contact */
+        #contact {
+            background: rgb(21, 21, 21);
+        }
+        #contact form {
+            display: flex;
+        }
+
+        #contact form p {
+            margin: 0;
+            padding-right: 40px;
+            width: 38vw;
+        }
+
+        #contact form div {
+            display: flex;
+            flex-direction: column;
+            gap: 5vh;
+            width: 100%;
+        }
+
+        #contact form input, textarea {
+            font-family: Poppins, Arial, sans-serif;
+            width: 100%;
+            height: 8vh;
+            padding: 10px;
+            background: rgb(24, 24, 24);
+            color: var(--text-color);
+            font-weight: 500;
+            border: 2px solid rgb(57, 57, 57);
+            border-radius: 10px;
+            outline: none;
+            resize:vertical;
+        }
+
+        #contact form input[type=submit] {
+            height: auto;
+            color: var(--theme-color);
+            width: 10vw;
+            transition-duration: 0.2s;
+        }
+        
+        #contact form input[type=submit]:hover {
+            color: var(--bg-color);
+            border-color: var(--theme-color);
+            background: var(--theme-color);
+            transition-duration: 0.2s;
+        }
+        footer {
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        footer a {
+            color: var(--text-color);
+            transition-duration: 0.2s;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--theme-color);
+            transition-duration: 0.2s;
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <h2>DEMO THREE</h2>
+        <h3>designed by <span class="thm-text">aishik</span></h3>
+    </header>
+    <nav>
+        <a href="#hero">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#exhibition">EXHIBITION</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+    <main>
+        <section id="hero" class="lvl1">
+            <div>
+                <h1>HI I AM <span class="thm-text">AISHIK</span></h1>
+                <p>I am a <strong>computer enthusiast, science lover and math hobbist.</strong> I created this website as a speed run.</p>
+                <a class="btn" href="#contact">SAY HELLO!</a>
+            </div>
+            <img src="demo3/photo5.jpg">
+        </section>
+        <section id="about" class="lvl1">
+            <div>
+                <h1>About me</h1>
+                <p>
+                    Enrolled in the in the <strong>Indian Institute of Science,</strong> I am passionate about <strong> photography, music and art.</strong> 
+                    I like <strong>science</strong> and am often fascinated by how <strong>seemingly unrelated ideas join dots to a bigger picture.</strong> With this passion and curiosity, I would like <strong>to make this world a better place to live.</strong>
+                </p>
+            </div>
+
+            <aside>
+                <h3>#YouTubersILike</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/@veritasium" target="_blank">Veritasium</a></li>
+                    <li><a href="https://www.youtube.com/@3blue1brown" target="_blank">3Blue1Brown</a></li>
+                    <li><a href="https://www.youtube.com/@TheActionLab" target="_blank">Action Lab</a></li>
+                    <li>and many more...</li>
+                </ul>
+                <h3>Follow Me</h3>
+                <ul>
+                    <a href="https://in.pinterest.com/aishik_nath/" targer="_blank" class="social-link"><i class="fi fi-brands-pinterest"></i></a>
+                    <a href="https://www.linkedin.com/in/nathaishik/" targer="_blank" class="social-link"><i class="fi fi-brands-linkedin"></i></a>
+                </ul>
+            </aside>
+        </section>
+        <section id="exhibition" class="lvl1">
+            <h1>My work</h1>
+            <section id="gallery">
+                <figure><img src="demo3/photo1.jpg"><figcaption><marquee>MAIN BUILDING UNDER MOON LIGHT</marquee></figcaption></figure>
+                <figure><img src="demo3/photo2.jpg"><figcaption><marquee>PARADISE IN KHASHPUR</marquee></figcaption></figure>
+                <figure><img src="demo3/photo3.jpg"><figcaption><marquee>FOREST BEHIND THE MAIN BUILDING</marquee></figcaption></figure>
+            </section>
+        </section>
+        <section id="contact" class="lvl1">
+            <h1>Say Hello</h1>
+            <form>
+                <p>Drop a message and I will get back to you on email 🤩</p>
+                <div>
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Hello Aishik,..."></textarea>
+                    <input type="submit">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>designed by <span class="thm-text">aishik</span></p>
+        <section>
+            <a href="https://in.pinterest.com/aishik_nath/" targer="_blank" class="social-link"><i class="fi fi-brands-pinterest"></i></a>
+            <a href="https://www.linkedin.com/in/nathaishik/" targer="_blank" class="social-link"><i class="fi fi-brands-linkedin"></i></a>
+        </section>
+    </footer>
+</body>
+</html>

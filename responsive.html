@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 1</title>
+    <style>
+        img {
+            display: block;
+            width: 100%;
+            border-radius: inherit;
+        }
+        
+        .banner {
+            display: block;
+            width: 100%;
+            height: max(20svh, 200px);
+            background-image: linear-gradient(45deg, rgb(144, 0, 58),rgb(72, 0, 172));
+        }
+        :root {
+            --font: system-ui;
+            --thm-pri: rgb(90, 149, 0);
+            --bg-pri: #000;
+            --text-pri: #fff;
+        }
+
+        body {
+            font-family: var(--font);
+            color: var(--text-pri);
+            background-color: var(--bg-pri);
+        }
+
+        header {
+            min-height: 300px;
+        }
+
+        .block {
+            max-width: 800px;
+            margin-inline: auto;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem 2rem;
+            flex-wrap: wrap;
+            list-style-type: "#";
+            color: var(--thm-pri);
+        }
+
+
+        .item-list {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: 
+                repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-inline: auto;
+        }
+
+        .item-list > li {
+            border: 1px solid rgb(61, 61, 61);
+            padding: 0.5rem;
+            border-radius: 10px;
+        }
+
+        .author-info {
+            padding: 2rem;
+        }
+
+        @media (width > 780px) {
+            main {
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: 38svw auto;
+            }
+
+        }
+
+        @media (width > 500px) and (width <= 780px)  {
+            .author-info {
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: 38svw auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="block">
+        <h1>Responsive design - demo 1</h1>
+        <p>
+            This is a responsive design demo. Resize to see effects. 
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab enim doloribus, iure ratione exercitationem dicta. Fugiat perspiciatis nostrum nemo ut, officiis laborum temporibus non eaque harum dicta minus facilis corporis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam ducimus odio doloremque quod! Distinctio modi nam fugiat dolor. Modi, enim iusto. Autem laudantium provident, quidem consequuntur ducimus voluptatum quibusdam ipsa!
+        </p>
+        <ul class="tags">
+            <li>HTML</li>
+            <li>JavaScript</li>
+            <li>CSS</li>
+            <li>Python</li>
+            <li>Django</li>
+            <li>NodeJS</li>
+            <li>React</li>
+            <li>UI/UX</li>
+        </ul>
+    </header>
+    <div
+        class="banner"
+    ></div>
+    <main>
+        <article class="author-info">
+            <img src="../../media_samples/self/self.jpeg" alt="A picture of me">
+            <div>
+                <h3>Aishik Nath</h3>
+                <p>Designer, developer and science enthusiast</p>
+            </div>
+        </article>
+        <ul class="item-list">
+            <li>
+                <h3>Item 1</h3>
+                <img src="../../media_samples/IMG_20231112_184322.jpg">
+            </li>
+            <li>
+                <h3>Item 2</h3>
+                <img src="../../media_samples/photo2.jpg">
+            </li>
+            <li>
+                <h3>Item 3</h3>
+                <img src="../../media_samples/photo3.jpg">
+            </li>
+            <li>
+                <h3>Item 4</h3>
+                <img src="../../media_samples/photo4.jpg">
+            </li>
+            <li>
+                <h3>Item 5</h3>
+                <img src="../../media_samples/photo5.jpg">
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

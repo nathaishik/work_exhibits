@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball</title>
+    <style>
+        @keyframes bounce_up {
+            0% {
+                transform: translateY(0px);
+            }
+            10% {
+                transform: translateY(-79px);
+            }
+            20% {
+                transform: translateY(-141px);
+            }
+            30% {
+                transform: translateY(-185px);
+            }
+            40% {
+                transform: translateY(-211px);
+            }
+            50% {
+                transform: translateY(-220px);
+            }
+            60% {
+                transform: translateY(-211px);
+            }
+            70% {
+                transform: translateY(-185px);
+            }
+            80% {
+                transform: translateY(-141px);
+            }
+            90% {
+                transform: translateY(-79px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes move_back {
+            0% {
+                transform: translateX(0px);
+            }
+            100% {
+                transform: translateX(-100px);
+            }
+        }
+
+        body{
+            margin: 0;
+            min-height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+        }
+
+        .ball_container {
+            position: relative;
+            width: 100%;
+        }
+
+        #box {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(0, 0, 0, 0.755));
+        }
+
+        .ball {
+            box-shadow: 
+            0px 0px 5px rgb(255, 106, 0),
+            0px 0px 25px rgba(255, 123, 0, 0.8),
+            0px 0px 50px rgba(255, 140, 0, 0.7),
+            0px 0px 100px rgba(255, 0, 0, 0.5),
+            0px 0px 200px rgba(255, 0, 0, 0.2),
+            0px 0px 300px rgba(255, 0, 0, 1);
+            background: rgb(255, 183, 0);
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            animation: bounce_up 1s linear infinite paused;
+            transform-origin: 50%, 0%;
+            transition-duration: 0.1s;
+            cursor: pointer;
+
+        }
+
+        .ball:hover {
+            box-shadow: 
+            0px 0px 5px rgb(255, 106, 0),
+            0px 0px 25px rgba(255, 123, 0, 0.8),
+            0px 0px 50px rgba(255, 140, 0, 0.7),
+            0px 0px 100px rgba(255, 0, 0, 0.6),
+            0px 0px 200px rgba(255, 0, 0, 0.3),
+            0px 0px 300px rgba(255, 0, 0, 1),
+            0px 0px 500px rgba(255, 0, 0, 1);
+            transition-duration: 0.1s;
+        }
+        #caption {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translate(-45%, -50%) rotate(-90deg);
+            
+        }
+        #sidenote {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translate(45%, -50%) rotate(90deg);
+            
+        }
+        button {
+            position: fixed;
+            background: transparent;
+            padding: 5px 10px;
+            bottom: 80px;
+            border: 2px solid white;
+            cursor: pointer;
+            transition-duration: 0.2s;
+
+        }
+
+        button:hover {
+            background: white;
+            color: black;
+            transition-duration: 0.2s;
+        }
+
+        button:active {
+            background: rgb(222, 211, 197);
+            border: 2px solid rgb(222, 211, 197);
+            transition-duration: 0.1s;
+        }
+
+        .text {
+            font-family: "Space Mono", monospace;
+            font-size: 20px;
+            color: white;
+
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="text" id="caption">Bouncing Ball Animation by Aishik Nath.</div>
+    <div class="text" id="sidenote">Created with HTML, CSS and JS.</div>
+    <div class="ball_container" id="upper_frame">
+        <div id="box">
+            <div class="ball"></div>
+        </div>
+    </div>
+    <button class="text">Bounce</button>
+    <audio controls>
+        <source src="ball_drop.mp3" type="audio/mp3">
+    </audio>
+    <!--<div class="ball_container" id="lower_frame"><div class="ball"></div><div id="floor"></div></div>-->
+    <script>
+        document.querySelector(".ball").addEventListener("animationiteration", event => {
+            var elapse = event.elapsedTime;
+            if (event.elapsedTime > 0 && elapse % 1 === 0) {
+                document.querySelector("audio").play();
+            };
+        });
+        const togglers = [document.querySelector("button"), document.querySelector(".ball")];
+        togglers.forEach(toggle => {
+            toggle.addEventListener("click", () => {
+           if (document.querySelector(".ball").style.animationPlayState === "running") {
+                document.querySelector(".ball").style.animationPlayState = "paused"
+                document.querySelector("button").innerHTML = "Continue";
+           } else {
+                document.querySelector(".ball").style.animationPlayState = "running";
+                document.querySelector("button").innerHTML = "Freeze";
+           };
+        });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reveal</title>
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            background-image: url("../layouts/images/photo7.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 60dvh;
+            /* width: 100dvw; */
+            padding: 10% 5%;
+            box-sizing: border-box;
+            transition-duration: 0.5s;
+            -webkit-mask-image: linear-gradient(white, transparent);
+            mask-image: linear-gradient(black 60%, transparent);
+        }
+
+        
+        header h1 {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            font-size: clamp(2.2rem, 4.4vw, 4.4rem);
+            font-style: italic;
+            text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.797);
+        }
+        
+        section {
+            height: 60dvh;
+            /* display: flex;
+            flex-direction: column;
+            align-items: center; */
+            padding: 10% 20%;
+            gap: 1rem;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.122);
+        }
+        
+        section > * {
+            background-image: linear-gradient(black, black); 
+            background-clip: text;
+            background-repeat: no-repeat;
+            background-size: 0% 100%;
+            animation: reveal linear both;
+            animation-timeline: view(y);
+
+            text-align: justify;
+        }
+        
+        h1 {
+            text-transform: lowercase;
+            font-size: clamp(1.8rem, 3.6vw, 3.6rem);
+            text-align: center;
+            animation-range-start: cover 20vh;
+            animation-range-end: cover 30vh;
+        }
+        p {
+            display: inline;
+            animation-range-start: cover 14.3dvh;
+            animation-range-end: cover 30vh;
+        }
+
+        .last {
+            /* displ?ay: inline; */
+            animation-range-start: entry;
+            animation-range-end: entry;
+        }
+        
+        @keyframes reveal {
+            to {
+                background-size: 100% 100%;
+            }
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <h1>Text Reveal Animation</h1>
+    </header>
+    <main>
+        <section>
+            <h1>Lorem Heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt in aliquid cum consectetur eius reiciendis corporis voluptas, vel nulla, iure, quaerat fugiat beatae dolor vero eaque ea. Fugiat, eum nostrum?</p>
+        </section>
+        <section>
+            <h1>Lorem Heading</h1>
+            <p>Dignissimos, repellat tempora? Possimus, pariatur. In facilis maiores quidem laudantium amet? Doloribus voluptate nobis nesciunt consectetur reprehenderit ullam eius impedit dicta fugiat. Magni impedit dolorum nostrum unde. At, delectus a!</p>
+        </section>
+        <section>
+            <h1>Lorem Heading</h1>
+            <p class="last">Debitis tempore aliquid aut cum rem ad. Veniam explicabo praesentium accusamus deleniti libero accusantium obcaecati perspiciatis deserunt error iure! Blanditiis commodi cupiditate recusandae omnis accusamus quas, molestiae tempore consequatur sint?</p>
+        </section>
+    </main>
+</body>
+</html>

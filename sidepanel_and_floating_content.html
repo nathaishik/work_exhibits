@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anybody:wght@400;500;600;700&family=DM+Serif+Display&family=Inter:wght@500;700;900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Poppins:wght@500;600;700&family=Tektur&display=swap" rel="stylesheet">
+    <title>Side menu and floating content</title>
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav div {
+            display: flex;
+            align-items: center;
+            height: 10vh;
+        }
+
+        nav div a, nav div strong{
+            padding: 10px 20px;
+            font-family: Anybody, Poppins, Arial, sans-serif;
+            color: rgb(52, 52, 52);
+            text-decoration: none;
+            font-size: 20px;
+        }
+        #body {
+            display: flex;
+        }
+
+        #sidebar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 38vw;
+            height: 90vh;
+        }
+
+        #sidebar-contents {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #sidebar-contents a {
+            padding: 10px 20px;
+            margin: 5px 10px;
+            font-family: Anybody, Poppins, Arial, sans-serif;
+            font-size: 25px;
+            color: rgb(52, 52, 52);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        #main {
+            width: 62vw;
+            height: 90vh;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        #contents {
+            height: 100%;
+            width: 100%;
+            border-radius: 20px;
+            overflow: auto;
+            box-shadow: 0px 0px 30px rgba(133, 133, 133, 0.445);
+        }
+
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-family: Anybody, Poppins, Arial, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        #contents::-webkit-scrollbar { width: 0 !important }
+
+        .content-1 {
+            height: 90%;            
+
+        }
+
+        .content-2 {
+            background: black;
+            color: white;
+            height: 50%;
+        }
+
+        .content-3 {
+            background: rgb(255, 247, 216);
+            height: 50%;
+        }
+
+        .content-4 {
+            background: black;
+            color: orange;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="left-nav">
+            <strong>NEOMORPH</strong>
+            <a href="#">Home</a>
+            <a hre="#">About</a>
+        </div>
+        <div id="right-nav">
+            <a href="#"><i class="fi fi-brands-facebook"></i></a>
+            <a href="#"><i class="fi fi-brands-twitter-alt"></i></a>
+            <a href="#"><i class="fi fi-brands-linkedin"></i></a>
+        </div>
+    </nav>
+    <div id="body">
+    <div id="sidebar">
+        <div id="sidebar-contents">
+            <a href="#">Page one</a>
+            <a href="#">Page two</a>
+            <a href="#">Page three</a>
+            <a href="#">Page four</a>
+        </div>
+    </div>
+    <div id="main">
+        <div id="contents">
+            <div class="content content-1">
+                This page demonstrates a nice looking UI
+            </div>
+            <div class="content content-2">
+                It has fixed navigation on top and left
+            </div>
+            <div class="content content-3">
+                This main page has a floating UI
+            </div>
+            <div class="content content-4">
+                Designed bt Aishik
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

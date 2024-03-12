@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing the view function</title>
+    <style>
+        body {
+            margin: 0;
+            background-color:var(--bg);
+        }
+        :root {
+            --bg: antiquewhite;
+            --color: rgb(198, 171, 135);
+        }
+        section {
+            text-align: center;
+
+            padding: 15% 20%;
+            box-sizing: border-box;
+        }
+        
+        p {
+            margin: 0;
+            padding: 5%;
+            text-align: justify;
+            background: var(--bg);
+            border: 5px solid transparent;
+            background-clip: padding-box;
+            border-radius: 10px;
+        }
+        
+        .grad-border {
+            border-radius: 10px;
+            background-image: linear-gradient(-45deg, var(--color) , transparent 10%, transparent 90%, var(--color));
+        }
+        
+        img {
+            object-fit: cover;
+            width: 80%;
+            height: auto;
+            margin-bottom: 5vh;
+            animation: scroll-fade linear 1s both;
+            animation-timeline: view();
+            animation-range-start: entry 10dvh;
+            animation-range-end: entry 50dvh;
+            /* vertical-align: middle; */
+        }
+
+        @keyframes scroll-fade {
+            from {scale: .8; opacity: 0.3;}
+            to {
+                scale: 1; opacity: 1;
+            }
+        }
+        </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Lorem</h1>
+            <div class="grad-border">
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit impedit molestias perspiciatis voluptate veritatis consectetur aut. Reiciendis cupiditate nihil saepe deleniti fugit, nemo officia optio veniam libero voluptatum ad laborum?</p>
+            </div>
+        </section>
+        <section>
+            <h1>Reiciendis</h1>
+            <img src="../layouts/images/photo3.jpg" width="100%" height="auto">
+            <div class="grad-border">
+            <p>Reiciendis quam repellat ea exercitationem delectus earum modi quibusdam placeat aliquid obcaecati ducimus, quo porro. Labore corporis sint excepturi, laudantium eligendi, doloribus reprehenderit aut odit quidem sapiente ab error est.</p>
+            </div>
+        </section>
+        <section>
+            <h1>Exercitationem</h1>
+            <img src="../layouts/images/photo5.jpg" width="100%" height="auto">
+            <div class="grad-border">
+
+            <p>Exercitationem, molestiae! Quasi nam accusamus ipsum, non odio fuga architecto distinctio suscipit ratione facere recusandae eum deserunt incidunt repellat expedita fugit illum aut. Eum dolorum veniam sit maiores incidunt facere.</p>
+            </div>
+        </section>
+        <section>
+            <h1>Dolores</h1>
+            <img src="../layouts/images/photo1.jpg" width="100%" height="auto">
+            <div class="grad-border">
+
+            <p>Dolores ullam magni ratione quasi. Dolore nostrum eligendi reiciendis temporibus harum ex autem sequi, velit officiis hic minima veniam at provident error perferendis? Et sapiente alias ipsam qui quas suscipit.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating gradient</title>
+    <style>
+        @property --gradient-ang {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @keyframes rotation {
+            from {--gradient-ang: 0deg;}
+            to {--gradient-ang: 360deg;}
+        }
+
+        :root {
+            --clr1: rgb(120, 82, 0);
+            --clr2: rgb(52, 0, 86);
+            --clr3: rgb(0, 63, 82);
+            --clr4: rgb(0, 34, 37);
+            --clr5: rgb(95, 255, 138);
+            --clr6: rgb(81, 229, 255);
+        }
+
+        body {
+            margin: 0;
+            display: grid;
+            place-content: center;
+            background: conic-gradient(from var(--gradient-ang), var(--clr1), var(--clr2), var(--clr3), var(--clr4), var(--clr1));
+            min-height: 100svh;
+            animation: rotation 30s linear infinite;
+            /* filter: blur(10px); */
+        }
+
+        .card {
+            background: rgb(1, 44, 63);
+            /* backdrop-filter: blur(10px); */
+            font-family: 'Space Mono', monospace;
+            color: white;
+            width: 50svw;
+            height: 50svh;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .card > p {
+            margin: 50px;
+        }
+
+        .card:before, .card:after {
+            content: "";
+            inset: 0;
+            position: absolute;
+            z-index: -1;
+            background: conic-gradient(from var(--gradient-ang), var(--clr5), var(--clr6), var(--clr5), var(--clr6), var(--clr5));
+            border-radius: inherit;
+            animation: rotation 20s linear infinite reverse;
+        }
+        .card:after {
+            filter: blur(100px);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+        <p>Hello, I am Aishik</p>
+    </div>
+</body>
+</html>
