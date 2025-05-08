@@ -1,0 +1,146 @@
+/* * Fonts */
+
+.jersey-25-regular {
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .xanh-mono-regular {
+    font-family: "Xanh Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .xanh-mono-regular-italic {
+    font-family: "Xanh Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+
+  .inter {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .gothic-a1-regular {
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+  /* * Utility */
+
+:root {
+  --shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  --base-text-font: "MS PGothic", "Open Sans", Meiryo, "Gothic A1", Inter, Arial, sans-serif;
+  --heading-font: "Jersey 25", Inter, Arial, sans-serif;
+  --serif-font: "Xanh Mono", Times, serif;
+
+}
+
+body {
+  font-family: var(--base-text-font);
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1320,16,1.414,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --size--2: clamp(0.5002rem, 0.7566rem + -0.3109vw, 0.6944rem);
+  --size--1: clamp(0.7072rem, 0.8737rem + -0.2018vw, 0.8333rem);
+  --size-0: clamp(1rem, 1rem + 0vw, 1rem);
+  --size-1: clamp(1.2rem, 1.1315rem + 0.3424vw, 1.414rem);
+  --size-2: clamp(1.44rem, 1.261rem + 0.895vw, 1.9994rem);
+  --size-3: clamp(1.728rem, 1.3763rem + 1.7586vw, 2.8271rem);
+  --size-4: clamp(2.0736rem, 1.4579rem + 3.0784vw, 3.9976rem);
+  --size-5: clamp(2.4883rem, 1.4758rem + 5.0628vw, 5.6526rem);
+}
+
+  .dark-bg {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }
+
+
+  * {
+    font-size: var(--size-0);
+  }
+
+  h1 {
+    font-size: var(--size-5);
+    margin-top: 1em;
+  }
+  h2 {
+    font-size: var(--size-4);
+    margin-top: 1em;
+  }
+  h3 {
+    font-size: var(--size-3);
+    margin-top: 1em;
+  }
+  h4 {
+    font-size: var(--size-2);
+    margin-top: 1em;
+  }
+
+  p, span {
+    font-size: var(--size-0);
+    margin-top: 1em;
+    font-family: var(--base-text-font);
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+  }
+
+
+
+  /* * NavBar */
+
+nav.navbar {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background: white;
+    border-bottom: 1px solid black;
+    color: black;
+    .navbar-toggler, .navbar-brand {
+      color: black;
+    }
+    .offcanvas {
+        height: 100svh;
+
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .nav-item, .nav-link {
+          font-size: var(--size-4);
+          font-family: var(--heading-font);
+        }
+  }
+}
+
+/* * Footer */
+
+footer {
+
+  background-color: black;
+  color: white;
+  padding-block: 10svh;
+  .footer {
+    gap: 2em;
+  text-align: center;
+  }
+  * {
+    margin: 0;
+  }
+
+  a {
+    color: white;
+  }
+}

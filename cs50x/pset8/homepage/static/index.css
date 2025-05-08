@@ -1,0 +1,136 @@
+nav.navbar {
+    /* background: transparent !important; */
+    transition-duration: 0.3s;
+    background: transparent;
+    border: none;
+    colour: white;
+
+    .navbar-brand, .navbar-toggler {
+        transition-duration: 0.3s;
+        color: white;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+}
+
+nav.scrolled {
+    background-color: white;
+    transition-duration: 0.3s;
+    border-bottom: 1px solid black;
+
+    .navbar-brand, .navbar-toggler {
+        color: black;
+        transition-duration: 0.3s;
+    }
+
+}
+
+/* * body */
+
+main {
+    /* columns: 1; */
+    /* width: 100svw; */
+    /* height: 90svh; */
+}
+
+#hero {
+    height: 100svh;
+    background-image: url("/assets/banner-wide.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    align-content: center;
+    mask-image: linear-gradient(to bottom, white 0%, white 80%, rgba(0, 0, 0, 0.5) 100%);
+    /* background: linear-gradient(to bottom, transparent 0%, transparent 40%, white 90%, white 100%); */
+
+    h1 {
+        /* width: ; */
+        text-shadow: var(--shadow);
+        margin-top: 0;
+    }
+
+    p {
+        text-shadow: var(--shadow);
+    }
+}
+
+#site-info {
+    padding-block: 10svh;
+    width: 100svw;
+    min-height: 80svh;
+    align-content: center;
+
+    .img-container {
+        /* width: 80%; */
+        padding-inline: 10%;
+        align-content:center;
+        text-align: center;
+
+        img {
+            width: 80%;
+        }
+    }
+
+    .text-container {
+        align-content: center;
+
+        h2 {
+            margin-top: 0;
+        }
+
+        p {
+            font-family: var(--base-text-font);
+        }
+    }
+
+    img {
+        aspect-ratio: 1/1;
+    }
+}
+
+
+#tech-used {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding-block: 10svh;
+
+    ul {
+        padding: 0;
+        list-style: none;
+        justify-content: center;
+        gap: 2em;
+        display: flex;
+        flex-wrap: wrap;
+        font-family: var(--base-text-font);
+
+        img {
+            height: clamp(20px, 10svh, 60px);
+            width: auto;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+}
+
+#credits {
+    background: black;
+    color: white;
+
+    text-align: center;
+
+    p {
+        margin: 0;
+
+        a {
+            color: white;
+            text-decoration-thickness: 1px;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+10 HTML tags:
+
+1. main
+2. section
+3. div
+4. p
+5. h1
+6.script
+7. img
+8. ul
+9. footer
+10. span
+
+
+5 CSS Properties:
+
+1. font-family
+2. gap
+3. padding-block
+4. text-decoration-thickness
+5. margin-top
+
+
+Use of JavaScript:
+
+JavaScript has been used to add the nav, footer and the link to the stylesheet for each specific page along with the navbar scroll animation at /index.html.
+
+
+Use of Bootstrap:
+
+Bootstrap has been used to add the navigation bar, design layouts using Bootstrap columns and some other minor adjustments.
