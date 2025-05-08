@@ -3,7 +3,7 @@ nav.navbar {
     transition-duration: 0.3s;
     background: transparent;
     border: none;
-    colour: white;
+    /* color: white; */
 
     .navbar-brand, .navbar-toggler {
         transition-duration: 0.3s;
@@ -29,15 +29,9 @@ nav.scrolled {
 
 /* * body */
 
-main {
-    /* columns: 1; */
-    /* width: 100svw; */
-    /* height: 90svh; */
-}
-
 #hero {
     height: 100svh;
-    background-image: url("/assets/banner-wide.png");
+    background-image: url("./assets/banner-wide.png");
     background-size: cover;
     background-repeat: no-repeat;
     color: white;

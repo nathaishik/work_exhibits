@@ -3,7 +3,7 @@ let page = document.currentScript.getAttribute("data-page");
 // Head Tag
 
 let head = `
-      <link href="/static/${page}.css" rel="stylesheet">`
+      <link href="./static/${page}.css" rel="stylesheet">`
 document.querySelector("head").insertAdjacentHTML("beforeend", head);
 
 document.querySelector("title").innerHTML = `Aishik's Page - ${page.toUpperCase()}`
