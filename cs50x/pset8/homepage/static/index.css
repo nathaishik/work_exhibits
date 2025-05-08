@@ -31,7 +31,7 @@ nav.scrolled {
 
 #hero {
     height: 100svh;
-    background-image: url("./assets/banner-wide.png");
+    background-image: url("../assets/banner-wide.png");
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
